@@ -1,28 +1,54 @@
 package okhttp;
 
 import com.google.gson.Gson;
+import dto.ContactDto;
 import dto.ErrorDto;
 import dto.MessageDto;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import okhttp3.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class DeleteContactByIdOkhttp {
 
     String token = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoibWFyYUBnbWFpbC5jb20iLCJpc3MiOiJSZWd1bGFpdCIsImV4cCI6MTc0Mzk1MzYwNywiaWF0IjoxNzQzMzUzNjA3fQ.U5wGB2rQekt-LTEGSijdW6PDexDuK-D135pcwUh0buE";
     Gson gson = new Gson();
     OkHttpClient client = new OkHttpClient();
+    public static final MediaType JSON = MediaType.get("application/json;charset=utf-8");
     String id;
 
     @BeforeMethod
-    public void preCondition(){
+    public void preCondition() throws IOException {
         //create contact //
+        int i = new Random().nextInt(1000) + 1000;
+        ContactDto contactDto = ContactDto.builder()
+                .name("Maya")
+                .lastName("Dow")
+                .email("maya" + i + "@gmail.com")
+                .phone("12345565" + i)
+                .address("TA")
+                .description("Friend")
+                .build();
+
+        RequestBody body = RequestBody.create(gson.toJson(contactDto), JSON);
+        Request request = new Request.Builder()
+                .url("https://contactapp-telran-backend.herokuapp.com/v1/contacts")
+                .post(body)
+                .addHeader("Authorization", token)
+                .build();
+        Response response = client.newCall(request).execute();
+        Assert.assertTrue(response.isSuccessful());
+        Assert.assertEquals(response.code(), 200);
+        MessageDto messageDto = gson.fromJson(response.body().string(), MessageDto.class);
+        String message = messageDto.getMessage();
+        System.out.println(message);//"Contact was added! ID: a4a33d33-b00e-4049-8570-dfd07aace9c7"
+        String[] all = message.split(": ");
+        id = all[1];
+        System.out.println(id);
+
         //get id from message:"message": "Contact was added! ID: a4a33d33-b00e-4049-8570-dfd07aace9c7"
         //id = ""
     }
@@ -30,17 +56,17 @@ public class DeleteContactByIdOkhttp {
     @Test
     public void deleteContactByIdSuccess() throws IOException {
         Request request = new Request.Builder()
-                .url("https://contactapp-telran-backend.herokuapp.com/v1/contacts/"+id)
+                .url("https://contactapp-telran-backend.herokuapp.com/v1/contacts/" + id)
                 .delete()
                 .addHeader("Authorization", token)
                 .build();
 
         Response response = client.newCall(request).execute();
-      Assert.assertTrue(response.isSuccessful());
-        Assert.assertEquals(response.code(),200);
+        Assert.assertTrue(response.isSuccessful());
+        Assert.assertEquals(response.code(), 200);
         MessageDto messageDto = gson.fromJson(response.body().string(), MessageDto.class);
         System.out.println(messageDto.getMessage());
-        Assert.assertEquals(messageDto.getMessage(),"Contact was deleted!");
+        Assert.assertEquals(messageDto.getMessage(), "Contact was deleted!");
     }
 
     @Test
@@ -53,9 +79,9 @@ public class DeleteContactByIdOkhttp {
 
         Response response = client.newCall(request).execute();
         Assert.assertFalse(response.isSuccessful());
-        Assert.assertEquals(response.code(),401);
+        Assert.assertEquals(response.code(), 401);
         ErrorDto errorDto = gson.fromJson(response.body().string(), ErrorDto.class);
-        Assert.assertEquals(errorDto.getError(),"Unauthorized");
+        Assert.assertEquals(errorDto.getError(), "Unauthorized");
     }
 
     @Test
@@ -68,11 +94,11 @@ public class DeleteContactByIdOkhttp {
 
         Response response = client.newCall(request).execute();
         Assert.assertFalse(response.isSuccessful());
-        Assert.assertEquals(response.code(),400);
+        Assert.assertEquals(response.code(), 400);
         ErrorDto errorDto = gson.fromJson(response.body().string(), ErrorDto.class);
-        Assert.assertEquals(errorDto.getError(),"Bad Request");
+        Assert.assertEquals(errorDto.getError(), "Bad Request");
         //System.out.println(errorDto.getMessage());
-        Assert.assertEquals(errorDto.getMessage(),"Contact with id: 18bf1a49 not found in your contacts!");
+        Assert.assertEquals(errorDto.getMessage(), "Contact with id: 18bf1a49 not found in your contacts!");
     }
 }
 
