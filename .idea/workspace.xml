@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e4d251b-d2cf-415f-81ba-aed0a0dd0fa8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/restassured/DeleteContactByIdRA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/restassured/GetAllContactsTestsRA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/restassured/LoginTestsRA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/restassured/RegistrationTestsRA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/okhttp/DeleteContactByIdOkhttp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/okhttp/DeleteContactByIdOkhttp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +55,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/build.gradle" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/test/java/okhttp/DeleteContactByIdOkhttp.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/test/java/okhttp/GetAllContactsTestsOkhttp.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/test/java/okhttp/RegistrationTestsOkhttp.java" root0="SKIP_INSPECTION" />
@@ -71,20 +76,28 @@
     "Gradle.DeleteContactByIdOkhttp.deleteContactByIdNotFound.executor": "Run",
     "Gradle.DeleteContactByIdOkhttp.deleteContactByIdSuccess.executor": "Run",
     "Gradle.DeleteContactByIdOkhttp.deleteContactByIdWrongToken.executor": "Run",
+    "Gradle.DeleteContactByIdRA.deleteContactByIdSuccess.executor": "Run",
+    "Gradle.DeleteContactByIdRA.deleteContactByIdWrongToken.executor": "Run",
     "Gradle.GetAllContactsTestsOkhttp.executor": "Run",
     "Gradle.GetAllContactsTestsOkhttp.getAllContactsSuccess.executor": "Run",
     "Gradle.GetAllContactsTestsOkhttp.getAllContactsWrongToken.executor": "Run",
+    "Gradle.GetAllContactsTestsRA.getAllContactsSuccess.executor": "Run",
     "Gradle.LoginTestsOkhttp.executor": "Run",
+    "Gradle.LoginTestsRA.loginSuccess.executor": "Run",
+    "Gradle.LoginTestsRA.loginWrongEmailFormat.executor": "Run",
     "Gradle.RegistrationTestsOkhttp.executor": "Run",
     "Gradle.RegistrationTestsOkhttp.registrationTestRegisteredUser.executor": "Run",
+    "Gradle.RegistrationTestsRA.registrationSuccess.executor": "Run",
+    "Gradle.RegistrationTestsRA.registrationWrongEmail.executor": "Run",
+    "Gradle.RegistrationTestsRA.registrationWrongPassword.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Qa28/Qa28_PhoneBook_API"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.DeleteContactByIdOkhttp.deleteContactByIdSuccess">
-    <configuration name="DeleteContactByIdOkhttp.deleteContactByIdNotFound" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.DeleteContactByIdRA.deleteContactByIdWrongToken">
+    <configuration name="DeleteContactByIdRA.deleteContactByIdSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -97,7 +110,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;okhttp.DeleteContactByIdOkhttp.deleteContactByIdNotFound&quot;" />
+            <option value="&quot;restassured.DeleteContactByIdRA.deleteContactByIdSuccess&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -108,7 +121,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DeleteContactByIdOkhttp.deleteContactByIdSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DeleteContactByIdRA.deleteContactByIdWrongToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -121,7 +134,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;okhttp.DeleteContactByIdOkhttp.deleteContactByIdSuccess&quot;" />
+            <option value="&quot;restassured.DeleteContactByIdRA.deleteContactByIdWrongToken&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -132,7 +145,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="DeleteContactByIdOkhttp.deleteContactByIdWrongToken" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="GetAllContactsTestsRA.getAllContactsSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -145,7 +158,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;okhttp.DeleteContactByIdOkhttp.deleteContactByIdWrongToken&quot;" />
+            <option value="&quot;restassured.GetAllContactsTestsRA.getAllContactsSuccess&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +169,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTestsOkhttp" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTestsRA.registrationWrongEmail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +182,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;okhttp.RegistrationTestsOkhttp&quot;" />
+            <option value="&quot;restassured.RegistrationTestsRA.registrationWrongEmail&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -180,7 +193,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="RegistrationTestsOkhttp.registrationTestRegisteredUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTestsRA.registrationWrongPassword" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -193,7 +206,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;okhttp.RegistrationTestsOkhttp.registrationTestRegisteredUser&quot;" />
+            <option value="&quot;restassured.RegistrationTestsRA.registrationWrongPassword&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.DeleteContactByIdOkhttp.deleteContactByIdSuccess" />
-        <item itemvalue="Gradle.RegistrationTestsOkhttp.registrationTestRegisteredUser" />
-        <item itemvalue="Gradle.RegistrationTestsOkhttp" />
-        <item itemvalue="Gradle.DeleteContactByIdOkhttp.deleteContactByIdNotFound" />
-        <item itemvalue="Gradle.DeleteContactByIdOkhttp.deleteContactByIdWrongToken" />
+        <item itemvalue="Gradle.DeleteContactByIdRA.deleteContactByIdWrongToken" />
+        <item itemvalue="Gradle.GetAllContactsTestsRA.getAllContactsSuccess" />
+        <item itemvalue="Gradle.DeleteContactByIdRA.deleteContactByIdSuccess" />
+        <item itemvalue="Gradle.RegistrationTestsRA.registrationWrongPassword" />
+        <item itemvalue="Gradle.RegistrationTestsRA.registrationWrongEmail" />
       </list>
     </recent_temporary>
   </component>
